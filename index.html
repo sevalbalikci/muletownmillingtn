@@ -188,6 +188,14 @@
               method="POST"
               enctype="multipart/form-data"
             >
+              <!-- Hidden fields for Formspree configuration -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Quote Request from Muletown Milling Website"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+
               <div class="form-row">
                 <div class="form-group">
                   <label for="name" class="form-label"

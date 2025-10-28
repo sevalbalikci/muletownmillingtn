@@ -214,62 +214,57 @@ const submitBtn = document.getElementById("submitBtn");
 const formMessage = document.getElementById("formMessage");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", async (e) => {
+  contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Disable submit button
+    // Show loading state
     submitBtn.disabled = true;
-    document.querySelector(".btn-text").style.display = "none";
-    document.querySelector(".btn-loader").style.display = "inline";
+    const btnText = document.querySelector(".btn-text");
+    const btnLoader = document.querySelector(".btn-loader");
+    btnText.style.display = "none";
+    btnLoader.style.display = "inline";
 
-    // Hide any previous messages
-    formMessage.className = "form-message";
-    formMessage.textContent = "";
+    // Create FormData and submit
+    const formData = new FormData(contactForm);
 
-    try {
-      // Create FormData object
-      const formData = new FormData(contactForm);
+    fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Show success alert
+          alert(
+            "Thank you! Your quote request has been submitted successfully. We'll contact you within 24 hours at the email you provided."
+          );
 
-      // Add selected files
-      selectedFiles.forEach((file, index) => {
-        formData.append(`photo_${index}`, file);
-      });
-
-      // Submit form to Formspree or your backend
-      const response = await fetch(contactForm.action, {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (response.ok) {
-        // Success
-        showFormMessage(
-          "Thank you! Your quote request has been sent. We'll contact you within 24 hours.",
-          "success"
+          // Reset form
+          contactForm.reset();
+          selectedFiles = [];
+          updateFileList();
+        } else {
+          // Show error alert
+          alert(
+            "Oops! There was a problem submitting your form. Please try again or email us directly at office@muletownmillingtn.com"
+          );
+        }
+      })
+      .catch((error) => {
+        // Show error alert
+        alert(
+          "Oops! There was a problem submitting your form. Please try again or email us directly at office@muletownmillingtn.com"
         );
-        contactForm.reset();
-        selectedFiles = [];
-        updateFileList();
-      } else {
-        // Error from server
-        const data = await response.json();
-        throw new Error(data.error || "Failed to send form");
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      showFormMessage(
-        "Sorry, there was an error sending your request. Please try emailing us directly at office@muletownmilling.com",
-        "error"
-      );
-    } finally {
-      // Re-enable submit button
-      submitBtn.disabled = false;
-      document.querySelector(".btn-text").style.display = "inline";
-      document.querySelector(".btn-loader").style.display = "none";
-    }
+        console.error("Form submission error:", error);
+      })
+      .finally(() => {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        btnText.style.display = "inline";
+        btnLoader.style.display = "none";
+      });
   });
 }
 
