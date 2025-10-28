@@ -1,0 +1,24 @@
+{
+  "name": "Muletown Milling",
+  "short_name": "Muletown",
+  "description": "Professional tree cutting and removal services in Columbia, Tennessee",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#150a07",
+  "theme_color": "#be8e60",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/favicon_io/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/favicon_io/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

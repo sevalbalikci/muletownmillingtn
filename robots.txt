@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://muletownmillingtn.com/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Disallow specific paths (if any)
+Disallow: /FORM_ALERT_SETUP.md
+Disallow: /DEPLOYMENT_GUIDE.md
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /LICENSE
