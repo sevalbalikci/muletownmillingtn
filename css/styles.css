@@ -682,6 +682,11 @@ section {
   min-width: 40px;
 }
 
+.contact-social-icon {
+  width: 32px;
+  height: 32px;
+}
+
 .contact-label {
   color: var(--color-primary);
   font-size: 1rem;
