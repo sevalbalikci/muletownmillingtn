@@ -159,7 +159,8 @@ a {
 .veteran-logo {
   height: auto;
   width: auto;
-  max-height: 80px;
+  max-height: 50px;
+  max-width: 100px;
   object-fit: contain;
   transition: var(--transition);
 }
@@ -952,9 +953,45 @@ select.form-input option {
   text-align: center;
 }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
 .footer-text {
   margin: 0;
   font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-light-gray);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 6px;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.social-link:hover {
+  color: var(--color-primary);
+  background-color: rgba(190, 142, 96, 0.1);
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -1198,6 +1235,15 @@ select.form-input option {
 
   .footer-text {
     font-size: 0.8rem;
+  }
+
+  .footer-social {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .social-link {
+    font-size: 0.85rem;
   }
 
   .contact-form-container {
