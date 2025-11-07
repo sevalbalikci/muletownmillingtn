@@ -17,7 +17,7 @@ Muletown Milling specializes in safe, efficient, and reliable tree cutting and r
 
   ```bash
   # Python 3
-  python -m http.server 8000
+  python3 -m http.server 8000
   ```
 
 - Navigate to `http://localhost:8000`
