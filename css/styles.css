@@ -159,8 +159,8 @@ a {
 .veteran-logo {
   height: auto;
   width: auto;
-  max-height: 40px;
-  max-width: 70px;
+  max-height: 60px;
+  max-width: 100px;
   object-fit: contain;
   transition: var(--transition);
 }
