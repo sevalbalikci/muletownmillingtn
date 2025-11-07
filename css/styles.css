@@ -111,10 +111,15 @@ a {
   height: 100px;
   width: auto;
   display: none; /* Hidden until user adds logo */
+  transition: var(--transition);
 }
 
 .logo.loaded {
   display: block;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .brand-name {
@@ -153,7 +158,6 @@ a {
 .veteran-badge {
   display: flex;
   align-items: center;
-  margin-left: var(--spacing-md);
 }
 
 .veteran-logo {
@@ -166,7 +170,7 @@ a {
 }
 
 .veteran-logo:hover {
-  transform: scale(1.7);
+  transform: scale(1.4);
 }
 
 /* ===== HERO SECTION ===== */
