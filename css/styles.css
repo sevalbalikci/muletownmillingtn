@@ -159,14 +159,14 @@ a {
 .veteran-logo {
   height: auto;
   width: auto;
-  max-height: 50px;
-  max-width: 100px;
+  max-height: 40px;
+  max-width: 70px;
   object-fit: contain;
   transition: var(--transition);
 }
 
 .veteran-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.7);
 }
 
 /* ===== HERO SECTION ===== */
@@ -346,9 +346,6 @@ section {
 
 .service-image-left .service-image-container {
   grid-area: image;
-}
-
-.service-content {
 }
 
 .service-section-title {
